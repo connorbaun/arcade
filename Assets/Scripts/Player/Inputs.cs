@@ -6,10 +6,10 @@ public class Inputs : MonoBehaviour {
 
     public float runSpeed = 12; //how fast does our character move around the level?
     public int myPlayerNum = 0; //(inherited from the init script) --- which player is this? 
-    public int countdownTime = 0;
+    //public int countdownTime = 0;
 
     private Motor motor; //reference for the Motor script attached to player. This script performs all movements and rotations.
-    private Initialize init;
+    private Initialize init; //reference to the initializer. this lets us take whatever we need from that obj
 
 
 	// Use this for initialization
@@ -17,8 +17,8 @@ public class Inputs : MonoBehaviour {
     {
         //ReceiveCountdownTime(countdownTime);
         motor = GetComponent<Motor>(); //tell unity that we are referring to the motor attached to this character
-        init = FindObjectOfType<Initialize>();
-        StartCoroutine(DisableMotor());
+        init = FindObjectOfType<Initialize>(); //tell unity how to access initializer
+        StartCoroutine(DisableMotor()); //right away, we want to disable the motor so players cannot move by default
 	}
 
 
@@ -39,13 +39,13 @@ public class Inputs : MonoBehaviour {
 
 	}
 
-    public IEnumerator DisableMotor()
+    public IEnumerator DisableMotor() //this function disables the motor and then waits for the countdown time before re-enabling it so we can move.
     {
-        motor.enabled = false;
+        motor.enabled = false; //disable motor. this way we cannot move at all
 
-        yield return new WaitForSeconds(init._countdownTime);
+        yield return new WaitForSeconds(init._countdownTime); //wait for whatever time we set on the initializer for countdown
 
-        motor.enabled = true;
+        motor.enabled = true; //enable the motor after this prerequisite time has been reached.
     }
 
 }

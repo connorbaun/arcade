@@ -4,21 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Initialize : MonoBehaviour {
-    public int _countdownTime = 1;
+    public int _countdownTime = 1; //set in inspector: how long is the countdown before the game begins?
 
     public int maxPlayers;
-    public int _playerNum = 0;
-    public List<GameObject> thePlayers = new List<GameObject>();
-    public GameObject player;
+    public int _playerNum = 0; //the number assigned to the player.
+    public List<GameObject> thePlayers = new List<GameObject>(); // the list of the players in the lobby.
+    public GameObject player; //the player object we will spawn 
 
-    public Inputs playerInput;
-    private UIManager UI;
+    public Inputs playerInput; //a reference to the input script on the player
+    private UIManager UI; //ref to the UI script
     
 
 
     public void Start()
     {
-        UI = FindObjectOfType<UIManager>();
+        UI = FindObjectOfType<UIManager>(); //tell unity how to find the UI gameobject
     }
 
     // Update is called once per frame
@@ -57,9 +57,6 @@ public class Initialize : MonoBehaviour {
                 newPlayer.GetComponent<Inputs>().myPlayerNum = _playerNum;
                 newPlayer.GetComponent<Appearance>().myPlayerNum = _playerNum;
                 newPlayer.GetComponent<SpawnPoint>().myPlayerNum = _playerNum;
-
-                
-                
             }
 
             GetComponent<Initialize>().enabled = false;
