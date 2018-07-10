@@ -27,6 +27,9 @@ GameObject:
   - component: {fileID: 114368136749783646}
   - component: {fileID: 114892462899031502}
   - component: {fileID: 114095080248018222}
+  - component: {fileID: 114919486263933482}
+  - component: {fileID: 114722812556780940}
+  - component: {fileID: 114349497694139214}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -41,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281468703648170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3167663, y: 3.3000004, z: -3.0198746}
+  m_LocalPosition: {x: 2.3167663, y: 5.71, z: -3.0198746}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -127,9 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ef0c8ecc2ebe947842128cc7116b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 10
+  runSpeed: 20
   myPlayerNum: 0
-  motorDisabled: 0
 --- !u!114 &114095080248018222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,6 +144,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+--- !u!114 &114349497694139214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281468703648170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694422a72c82f954f923cf056512d3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAmmo: 3
+  maxAmmo: 3
 --- !u!114 &114368136749783646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +169,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPlayerNum: 0
+  colSelector: 0
+  cols:
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 0, g: 0.027480364, b: 1, a: 0}
+  - {r: 1, g: 0, b: 0.97192335, a: 0}
+  - {r: 0.18238983, g: 0.8018868, b: 0, a: 0}
+  - {r: 0.8113208, g: 0, b: 0.08313598, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &114722812556780940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281468703648170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c9f5b5f088f6b4c98e9b18fe7bb26b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathParticles: {fileID: 1493412776137348, guid: 1052f1cddc112064e8dab8354f45ab04,
+    type: 2}
 --- !u!114 &114892462899031502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,3 +203,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPlayerNum: 0
   spawns: []
+--- !u!114 &114919486263933482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281468703648170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc36a82e1b0d2914aaf2ee801f4a9bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1228664775854822, guid: 3407631fcccab1849bd29f78cb22f367, type: 2}
+  bulletVelocity: 1000

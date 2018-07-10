@@ -13,6 +13,7 @@ public class Initialize : MonoBehaviour {
 
     public Inputs playerInput; //a reference to the input script on the player
     private UIManager UI; //ref to the UI script
+    public PickupManager pickups;
     
 
 
@@ -57,11 +58,15 @@ public class Initialize : MonoBehaviour {
                 newPlayer.GetComponent<Inputs>().myPlayerNum = _playerNum;
                 newPlayer.GetComponent<Appearance>().myPlayerNum = _playerNum;
                 newPlayer.GetComponent<SpawnPoint>().myPlayerNum = _playerNum;
+
+                
+                
             }
 
             GetComponent<Initialize>().enabled = false;
             UI.DisableMainMenu();
             StartCoroutine(UI.EnableCountdown());
+            pickups.Enable();
             
         }
 
