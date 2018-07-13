@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4509445128399210}
   - component: {fileID: 33733256590344406}
   - component: {fileID: 23365082331999636}
-  - component: {fileID: 65314115349985416}
   - component: {fileID: 54009636274344344}
   - component: {fileID: 114010106888407478}
   - component: {fileID: 114368136749783646}
@@ -30,6 +29,7 @@ GameObject:
   - component: {fileID: 114919486263933482}
   - component: {fileID: 114722812556780940}
   - component: {fileID: 114349497694139214}
+  - component: {fileID: 135257807750637414}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -91,7 +91,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281468703648170}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54009636274344344
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -107,18 +107,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
---- !u!65 &65314115349985416
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1281468703648170}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114010106888407478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ef0c8ecc2ebe947842128cc7116b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 20
+  runSpeed: 15
   myPlayerNum: 0
 --- !u!114 &114095080248018222
 MonoBehaviour:
@@ -155,8 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694422a72c82f954f923cf056512d3f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAmmo: 3
-  maxAmmo: 3
+  currentAmmo: 0
+  maxAmmo: 1
 --- !u!114 &114368136749783646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,3 +204,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1228664775854822, guid: 3407631fcccab1849bd29f78cb22f367, type: 2}
   bulletVelocity: 1000
+--- !u!135 &135257807750637414
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281468703648170}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

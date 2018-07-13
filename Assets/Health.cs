@@ -8,6 +8,7 @@ public class Health : MonoBehaviour {
     private Appearance appear;
     private Motor motor;
     private Inputs input;
+    private RestartGame restart;
 
 	// Use this for initialization
 	void Start ()
@@ -15,7 +16,7 @@ public class Health : MonoBehaviour {
         appear = GetComponent<Appearance>();
         motor = GetComponent<Motor>();
         input = GetComponent<Inputs>();
-		
+        restart = FindObjectOfType<RestartGame>();
 	}
 	
 	// Update is called once per frame
@@ -47,6 +48,8 @@ public class Health : MonoBehaviour {
                         //input.enabled = false;
                         motor.enabled = false;
                         this.gameObject.SetActive(false);
+                        restart.StartCoroutine(restart.Reset());
+                        
                         
 
 

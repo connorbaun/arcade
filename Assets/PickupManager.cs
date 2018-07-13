@@ -17,36 +17,34 @@ public class PickupManager : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-		
+        //StartCoroutine(PlacePickup());
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        timer += Time.deltaTime;
-        if (timer >= spawnTimeMin)
+        if (ammoOnMap.Count == maxPickups)
         {
-            timer = 0;
-
-            //PlacePickup();
-            //StartCoroutine(PlacePickups());
+            StopCoroutine(PlacePickup());
         }
-
+        
         ammoOnMap.AddRange(GameObject.FindGameObjectsWithTag("PickupSpawn"));
 	}
 
-    public void PlacePickup()
+    public IEnumerator PlacePickup()
     {
-        
-
+        for (int i = 0; i < maxPickups; i++)
+        {
             GameObject ammoClone = Instantiate(ammoObj);
             ammoClone.transform.position = pickupSpawns[Random.Range(0, pickupSpawns.Count)].transform.position;
-        //ammoOnMap.Add(ammoClone);
+            ammoOnMap.Add(ammoClone);
+            yield return new WaitForSeconds(3);
+        }
 
     }
 
     public void Enable ()
     {
-        this.gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 }

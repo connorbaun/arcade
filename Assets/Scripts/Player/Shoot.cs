@@ -24,13 +24,13 @@ public class Shoot : MonoBehaviour {
 
     public void Projectile()
     {
-        if (appear.colSelector != 0)
-        {
+        
+        
             GameObject bulletClone = Instantiate(bullet);
             bulletClone.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 3);
             bulletClone.GetComponent<Renderer>().material.color = appear.cols[appear.colSelector];
             bulletClone.GetComponent<Rigidbody>().AddForce(bulletVelocity * transform.forward);
-        }
+        
 
     }
 }

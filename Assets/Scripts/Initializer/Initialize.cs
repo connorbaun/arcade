@@ -9,6 +9,7 @@ public class Initialize : MonoBehaviour {
     public int maxPlayers;
     public int _playerNum = 0; //the number assigned to the player.
     public List<GameObject> thePlayers = new List<GameObject>(); // the list of the players in the lobby.
+    public List<Scene> levels = new List<Scene>();
     public GameObject player; //the player object we will spawn 
 
     public Inputs playerInput; //a reference to the input script on the player
@@ -20,6 +21,7 @@ public class Initialize : MonoBehaviour {
     public void Start()
     {
         UI = FindObjectOfType<UIManager>(); //tell unity how to find the UI gameobject
+        
     }
 
     // Update is called once per frame

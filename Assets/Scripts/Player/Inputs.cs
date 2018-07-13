@@ -50,7 +50,7 @@ public class Inputs : MonoBehaviour {
 
         if (Input.GetButtonDown(myPlayerNum + "R2")) //let player turn white at will
         {
-            //shoot.Projectile();
+            
             //call the shoot script attached to the player and fire the projectile!!!
             appear.BecomeWhite();
         }
@@ -70,9 +70,14 @@ public class Inputs : MonoBehaviour {
         {
             appear.BecomeRed();
         }
+        if (Input.GetButtonDown(myPlayerNum + "Shoot"))
+        {
+            shoot.Projectile();
+            Debug.Log("we shot");
+        }
 
 
-	}
+    }
 
     public IEnumerator DisableMotor() //this function disables the motor and then waits for the countdown time before re-enabling it so we can move.
     {
