@@ -34,6 +34,7 @@ public class Inputs : MonoBehaviour {
         float hInput = Input.GetAxisRaw(myPlayerNum+"Horizontal"); //take player input on x-axis and store it as hInput
         float zInput = Input.GetAxisRaw(myPlayerNum+"Vertical"); //take player input on z-axis and store it as zInput
 
+
         Vector3 _strafing = transform.right * hInput; //apply input value to the x (green arrow) transform of the object
         Vector3 _running = transform.forward * zInput; //apply input value to the z (blue arrow) transform of the object
 
@@ -50,9 +51,11 @@ public class Inputs : MonoBehaviour {
 
         if (Input.GetButtonDown(myPlayerNum + "R2")) //let player turn white at will
         {
-            
+
             //call the shoot script attached to the player and fire the projectile!!!
+            //appear.ResetColor();
             appear.BecomeWhite();
+            Debug.Log("i hit r2");
         }
         if (Input.GetButtonDown(myPlayerNum + "X")) //press x to turn blue
         {

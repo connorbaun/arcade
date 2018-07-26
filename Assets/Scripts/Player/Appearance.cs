@@ -48,6 +48,11 @@ public class Appearance : MonoBehaviour {
 
     }
 
+    public void ResetColor()
+    {
+        colSelector = 0;
+    }
+
     public void SwapColor()
     {
         if (colSelector >= cols.Count - 1)

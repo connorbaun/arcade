@@ -31,7 +31,7 @@ public class Health : MonoBehaviour {
         {
             if (collision.gameObject.GetComponent<Renderer>().material.color != appear.cols[appear.colSelector]) //if the square we hit is not black.
             {
-                if (appear.colSelector != 0) //if our square is not white.
+                if (appear.colSelector != 0) //if our player is not white.
                 {
                     if (collision.gameObject.GetComponent<Renderer>().material.color != appear.cols[5]) //and if that tile is not a black tile at the time we collide...
                     {

@@ -59,17 +59,13 @@ public class Initialize : MonoBehaviour {
                 newPlayer.tag = "Player" + _playerNum;
                 newPlayer.GetComponent<Inputs>().myPlayerNum = _playerNum;
                 newPlayer.GetComponent<Appearance>().myPlayerNum = _playerNum;
-                newPlayer.GetComponent<SpawnPoint>().myPlayerNum = _playerNum;
-
-                
-                
+                newPlayer.GetComponent<SpawnPoint>().myPlayerNum = _playerNum;    
             }
-
             GetComponent<Initialize>().enabled = false;
             UI.DisableMainMenu();
             StartCoroutine(UI.EnableCountdown());
             pickups.Enable();
-            
+
         }
 
 	}

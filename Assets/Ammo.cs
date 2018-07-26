@@ -8,14 +8,21 @@ public class Ammo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
         currentAmmo = maxAmmo;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log("my ammo: " + currentAmmo);
+        //Debug.Log("my ammo: " + currentAmmo);
 	}
+
+    public void RefillAmmo()
+    {
+        currentAmmo = maxAmmo;
+
+    }
 
 
 }

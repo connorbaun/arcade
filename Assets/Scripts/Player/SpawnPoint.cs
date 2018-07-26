@@ -9,6 +9,11 @@ public class SpawnPoint : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        SetSpawns();
+    }
+
+    public void SetSpawns()
+    {
         spawns.AddRange(GameObject.FindGameObjectsWithTag("Spawn"));
         if (myPlayerNum == 1)
         {

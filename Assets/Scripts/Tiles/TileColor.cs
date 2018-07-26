@@ -9,12 +9,13 @@ public class TileColor : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-		
+        DefaultColor();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+		 
 	}
 
     public void OnCollisionStay(Collision collision)
@@ -37,5 +38,10 @@ public class TileColor : MonoBehaviour {
         }
 
     } */
+
+    public void DefaultColor()
+    {
+        gameObject.GetComponent<Renderer>().sharedMaterial.color = appear.cols[5];
+    }
 
 }
