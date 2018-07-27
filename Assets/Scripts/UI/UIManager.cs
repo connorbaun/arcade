@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour {
 	void Update ()
     {
         numPlayUI.text = "Users in Lobby " + init.thePlayers.Count.ToString();
-        instrucUI.text = "Press UP ARROW KEY to change number of players. Press SPACEBAR to launch match.";        
+        instrucUI.text = "Press X on your controller to change number of players. Press OPTIONS button to launch match.";        
 	}
 
 

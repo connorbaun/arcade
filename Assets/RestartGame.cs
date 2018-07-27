@@ -41,6 +41,7 @@ public class RestartGame : MonoBehaviour {
         StartCoroutine(UI.EnableCountdown(restartTime)); //start the coroutine which actually performs the countdown onscreen
         foreach (Motor player in players)
         {
+            player.GetComponent<MeshRenderer>().enabled = true;
             player.GetComponent<SpawnPoint>().SetSpawns(); //reset their spawn locations
             player.GetComponent<Appearance>().DefaultColor(); //reset their colors back to white.
 

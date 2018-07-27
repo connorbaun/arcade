@@ -22,7 +22,7 @@ public class Inputs : MonoBehaviour {
         appear = GetComponent<Appearance>();
         shoot = GetComponent<Shoot>();
         init = FindObjectOfType<Initialize>(); //tell unity how to access initializer
-        StartCoroutine(DisableMotor(init._countdownTime)); //right away, we want to disable the motor so players cannot move by default
+        //StartCoroutine(DisableMotor(init._countdownTime)); //right away, we want to disable the motor so players cannot move by default
 	}
 
 

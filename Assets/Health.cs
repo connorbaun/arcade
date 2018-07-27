@@ -44,7 +44,7 @@ public class Health : MonoBehaviour {
                         GameObject particles = Instantiate(deathParticles);
                         particles.transform.up = transform.up;
                         particles.transform.position = gameObject.transform.position;
-
+                        GetComponent<MeshRenderer>().enabled = false;
                         input.enabled = false;
                         motor.enabled = false;
                         

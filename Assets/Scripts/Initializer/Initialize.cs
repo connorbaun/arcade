@@ -16,26 +16,28 @@ public class Initialize : MonoBehaviour {
     private UIManager UI; //ref to the UI script
     public PickupManager pickups;
     public GameObject restartManager;
+    private RestartGame restart;
     
 
 
     public void Start()
     {
         UI = FindObjectOfType<UIManager>(); //tell unity how to find the UI gameobject
-
+        restart = FindObjectOfType<RestartGame>();
         
     }
 
     // Update is called once per frame
     void Update ()
     {
-        if (Input.GetButtonDown("Fire1") && thePlayers.Count < maxPlayers)
+
+        if (Input.GetButtonDown("1X") && thePlayers.Count < maxPlayers)
         {
             thePlayers.Add(player);
             Debug.Log("Number of Players " + thePlayers.Count);
 
         }
-        else if (Input.GetButtonDown("Fire1") && thePlayers.Count >= maxPlayers)
+        else if (Input.GetButtonDown("1X") && thePlayers.Count >= maxPlayers)
         {
             thePlayers.Clear();
             
@@ -51,7 +53,7 @@ public class Initialize : MonoBehaviour {
             Debug.Log("Number of Players " + thePlayers.Count);
         } */
 
-        if (Input.GetButtonDown("Fire3") && thePlayers.Count > 0)
+        if (Input.GetButtonDown("1Options") && thePlayers.Count > 0)
         {
             for (int i = 0; i < thePlayers.Count; i++)
             {
@@ -65,8 +67,9 @@ public class Initialize : MonoBehaviour {
             }
             
             GetComponent<Initialize>().enabled = false;
+            StartCoroutine(restart.Reset());
             UI.DisableMainMenu();
-            StartCoroutine(UI.EnableCountdown(_countdownTime));
+            //StartCoroutine(UI.EnableCountdown(_countdownTime));
 
 
             
