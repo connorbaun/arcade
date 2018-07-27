@@ -44,13 +44,14 @@ public class Health : MonoBehaviour {
                         GameObject particles = Instantiate(deathParticles);
                         particles.transform.up = transform.up;
                         particles.transform.position = gameObject.transform.position;
-                        
-                        //input.enabled = false;
+
+                        input.enabled = false;
                         motor.enabled = false;
-                        this.gameObject.SetActive(false);
+                        
+                        //this.gameObject.SetActive(false);
                         restart.StartCoroutine(restart.Reset());
-                        
-                        
+
+
 
 
                     }
@@ -60,6 +61,7 @@ public class Health : MonoBehaviour {
 
         //Debug.Log(collision.gameObject.GetComponent<Renderer>().material.color);
     }
+
 
 
 

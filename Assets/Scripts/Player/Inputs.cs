@@ -22,7 +22,7 @@ public class Inputs : MonoBehaviour {
         appear = GetComponent<Appearance>();
         shoot = GetComponent<Shoot>();
         init = FindObjectOfType<Initialize>(); //tell unity how to access initializer
-        StartCoroutine(DisableMotor()); //right away, we want to disable the motor so players cannot move by default
+        StartCoroutine(DisableMotor(init._countdownTime)); //right away, we want to disable the motor so players cannot move by default
 	}
 
 
@@ -55,7 +55,7 @@ public class Inputs : MonoBehaviour {
             //call the shoot script attached to the player and fire the projectile!!!
             //appear.ResetColor();
             appear.BecomeWhite();
-            Debug.Log("i hit r2");
+            //Debug.Log("i hit r2");
         }
         if (Input.GetButtonDown(myPlayerNum + "X")) //press x to turn blue
         {
@@ -76,19 +76,24 @@ public class Inputs : MonoBehaviour {
         if (Input.GetButtonDown(myPlayerNum + "Shoot"))
         {
             shoot.Projectile();
-            Debug.Log("we shot");
+            //Debug.Log("we shot");
         }
 
 
     }
 
-    public IEnumerator DisableMotor() //this function disables the motor and then waits for the countdown time before re-enabling it so we can move.
+    public IEnumerator DisableMotor(int countdown) //this function disables the motor and then waits for the countdown time before re-enabling it so we can move.
     {
+        
         motor.enabled = false; //disable motor. this way we cannot move at all
+        Debug.Log("we should NOT be allowed to mover");
 
-        yield return new WaitForSeconds(init._countdownTime); //wait for whatever time we set on the initializer for countdown
+        yield return new WaitForSeconds(countdown); //wait for whatever time we set on the initializer for countdown
 
         motor.enabled = true; //enable the motor after this prerequisite time has been reached.
+        Debug.Log("We should now be allowed to move.");
     }
+
+
 
 }

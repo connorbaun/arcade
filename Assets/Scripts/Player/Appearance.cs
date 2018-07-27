@@ -65,6 +65,12 @@ public class Appearance : MonoBehaviour {
         }
     }
 
+    public void DefaultColor()
+    {
+        colSelector = 0;
+        Debug.Log("color has defaulted");
+    }
+
     public void BecomeWhite()
     {
         if (ammo.currentAmmo >= 1 && colSelector!= 0)

@@ -14,6 +14,7 @@ public class SpawnPoint : MonoBehaviour {
 
     public void SetSpawns()
     {
+        
         spawns.AddRange(GameObject.FindGameObjectsWithTag("Spawn"));
         if (myPlayerNum == 1)
         {
@@ -34,6 +35,12 @@ public class SpawnPoint : MonoBehaviour {
         {
             transform.position = spawns[3].transform.position;
         }
+    }
+
+    public void ResetPos()
+    {
+        Debug.Log("we are calling spawns.");
+        transform.position = new Vector3(spawns[myPlayerNum].transform.position.x, spawns[myPlayerNum].transform.position.y, spawns[myPlayerNum].transform.position.z);
     }
 
 }

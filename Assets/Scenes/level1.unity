@@ -2677,6 +2677,7 @@ MonoBehaviour:
   player: {fileID: 1281468703648170, guid: 31b87980dcfa7fc44a65463615d33898, type: 2}
   playerInput: {fileID: 0}
   pickups: {fileID: 1285443801}
+  restartManager: {fileID: 1369604186}
 --- !u!1001 &293839803
 Prefab:
   m_ObjectHideFlags: 0
@@ -11486,6 +11487,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartTime: 3
+  spawn: {fileID: 114892462899031502, guid: 31b87980dcfa7fc44a65463615d33898, type: 2}
+  ammo: {fileID: 114349497694139214, guid: 31b87980dcfa7fc44a65463615d33898, type: 2}
+  appear: {fileID: 114368136749783646, guid: 31b87980dcfa7fc44a65463615d33898, type: 2}
+  health: {fileID: 114722812556780940, guid: 31b87980dcfa7fc44a65463615d33898, type: 2}
 --- !u!4 &1371220253 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4197750327981576, guid: 538f7df025432f547b47aca235ea363c,
@@ -13945,7 +13950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1750770973
 RectTransform:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour {
         mainUI.SetActive(false);
     }
 
-    public IEnumerator EnableCountdown()
+    public IEnumerator EnableCountdown(int countDown)
     {
         gameplayUI.SetActive(true);
         countdownUI.text = "Get Ready...";
