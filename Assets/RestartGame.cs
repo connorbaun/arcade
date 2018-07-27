@@ -29,6 +29,11 @@ public class RestartGame : MonoBehaviour {
         //FIND ALL PLAYER CHARACTERS CURRENTLY IN THE MATCH
         players.AddRange(FindObjectsOfType<Motor>()); //collect the current player objs in the game rn
 
+        foreach (Motor player in players) //for each player obj in the game rn
+        {
+            player.GetComponent<Inputs>().enabled = false; //reenable their inputs
+            player.GetComponent<Motor>().enabled = false; //re-enable their players to move
+        }
         //WAIT FOR A FEW SECONDS WHILE PLAYERS ARE FROZEN IN PLACE AND TILES ARE AT THEIR CURRENT COLOR SET (PLAYERS CAN SEE HOW THEY DIED, ETC.)
         yield return new WaitForSeconds(restartTime); //wait a bit
 
